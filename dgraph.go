@@ -74,7 +74,7 @@ func DgraphStart(t *testing.T, image string) *DgraphConfig {
 		hostConfig,
 		nil,
 		nil,
-		"dgraph_test",
+		"",
 	)
 	require.NoError(err)
 
@@ -149,7 +149,7 @@ func DgraphLoadSchema(t *testing.T, config *DgraphConfig, schema string) {
 	}
 }
 
-// DgraphDropData deletes all nodes from the graph. The schema is left intact.
+// DgraphDropData deletes all data from the graph. The schema is left intact.
 func DgraphDropData(t *testing.T, config *DgraphConfig) {
 	var opUpdateResponse dgraphUpdateResponse
 	// curl -X POST localhost:8080/alter -d '{"drop_op": "DATA"}'
@@ -164,7 +164,7 @@ func DgraphDropData(t *testing.T, config *DgraphConfig) {
 	require.Equal(t, "Success", opUpdateResponse.Data.Code)
 }
 
-// DgraphDropAll drops all nodes and the schema from the graph.
+// DgraphDropAll drops all data AND the schema from the graph.
 func DgraphDropAll(t *testing.T, config *DgraphConfig) {
 	var opUpdateResponse dgraphUpdateResponse
 	// curl -X POST localhost:8080/alter -d '{"drop_all": true}'
