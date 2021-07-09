@@ -1,6 +1,6 @@
 ## dgraph-docker-helper
 
-#### A butt-simple test helper to use a transient Dgraph cluster in tests.
+A butt-simple test helper to use a transient Dgraph cluster in tests.
 
 Example
 ```golang
@@ -29,3 +29,8 @@ type User {
 }
 `
 ```
+
+#### Requirements
+
+* Docker
+* The Dgraph image in your Docker cache (e.g., `docker pull dgraph/standalone:v21.03.1`)
