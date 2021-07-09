@@ -1,9 +1,5 @@
-## dgraph-docker-helper
+package dgraphdockerhelper_test
 
-#### A butt-simple test helper to use a transient Dgraph cluster in tests.
-
-Example
-```golang
 import (
 	"testing"
 
@@ -15,7 +11,7 @@ func Test_LifeCycle(t *testing.T) {
 	defer ddh.DgraphStop(t, cfg)
 	ddh.DgraphLoadSchema(t, cfg, schema)
 
-	// OK to mutate/query the graph now
+	// OK to mutate, query the graph now
 }
 
 const schema = `
@@ -28,4 +24,3 @@ type User {
     active: Boolean
 }
 `
-```
