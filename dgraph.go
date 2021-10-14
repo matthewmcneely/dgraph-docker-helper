@@ -19,7 +19,7 @@ import (
 )
 
 const (
-	DefaultDgraphImage = "dgraph/standalone:v21.03.1"
+	DefaultDgraphImage = "dgraph/standalone:v21.03.2"
 )
 
 type DgraphConfig struct {
